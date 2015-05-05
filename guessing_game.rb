@@ -17,8 +17,7 @@ end
 #get user input
 puts "Pick a number between 1 and 100: "
 user_num = gets.chomp.to_i
-#number = number.to_i
-puts "You guessed #{number}"
+puts "You guessed #{user_num}"
 
 #call random number method
 computer = random
