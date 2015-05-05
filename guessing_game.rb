@@ -54,7 +54,7 @@ if user_num != computer
       user_num = gets.chomp.to_i
       while guesses.include?(user_num)
         puts "You made a HUGE mistake...you've already guessed that."
-        puts "Pick a number between 1 and 100 (#{5-a} tries left): "
+        puts "Pick a number between 1 and 100 (LAST TRY!): "
         user_num = gets.chomp.to_i
       end
       guesses << user_num
