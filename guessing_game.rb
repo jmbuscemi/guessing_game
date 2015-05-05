@@ -1,5 +1,5 @@
 #get user input
-puts "Pick a number between 1 and 100: "
+puts "Pick a number between 1 and 100 (5 tries left): "
 user_num = gets.chomp.to_i
 puts "You guessed #{user_num}"
 
@@ -21,13 +21,24 @@ end
 
 #call random number method
 computer = random
+puts "Computer's number = #{computer}"
 
-#check users guess
+#check user's guess
 if user_num != computer
-  (1..5).each do
+  (1..4).each do |a|
     check_guess(user_num,computer)
-    puts "Pick a number between 1 and 100: "
-    user_num = gets.chomp.to_i
+    if a < 4
+      puts "Pick a number between 1 and 100 (#{5-a} tries left): "
+      user_num = gets.chomp.to_i
+    elsif a == 4
+      puts "Pick a number between 1 and 100 (LAST TRY!): "
+      user_num = gets.chomp.to_i
+        if user_num != computer
+          puts "5 tries...YOU LOSE!"
+        elsif a == 4 && user_num == computer
+          puts "Congratulations! You got it on the last try."
+        end
+    end
   end
 else
   puts "You guessed it on the first try...that's baller!"
