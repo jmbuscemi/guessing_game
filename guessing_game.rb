@@ -33,11 +33,11 @@ if user_num != computer
     elsif a == 4
       puts "Pick a number between 1 and 100 (LAST TRY!): "
       user_num = gets.chomp.to_i
-        if user_num != computer
-          puts "5 tries...YOU LOSE!"
-        elsif a == 4 && user_num == computer
-          puts "Congratulations! You got it on the last try."
-        end
+      if user_num != computer
+        puts "5 tries...YOU LOSE!"
+      elsif user_num == computer
+        puts "Congratulations! You got it on the last try."
+      end
     end
   end
 else
